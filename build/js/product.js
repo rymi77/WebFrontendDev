@@ -1,3 +1,5 @@
+import "/productData.js";
+
 let products = [];
 function convertToJson(t) {
   if (t.ok) return t.json();
@@ -17,5 +19,5 @@ function addToCart(t) {
   const e = products.find((n) => n.Id === t.target.dataset.id);
   setLocalStorage("so-cart", e);
 }
-getProductsData(),
+getProductsData();
   document.getElementById("addToCart").addEventListener("click", addToCart);
