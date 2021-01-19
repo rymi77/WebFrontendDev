@@ -1,5 +1,7 @@
 import "/productData.js";
 
+import {getParams} from "./utils.js";
+
 let products = [];
 function convertToJson(t) {
   if (t.ok) return t.json();
