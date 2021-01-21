@@ -1,4 +1,5 @@
 class ProductData{
+    constructor();
     convertToJson(t) {
         if (t.ok) return t.json();
         throw new Error("Bad Response");
