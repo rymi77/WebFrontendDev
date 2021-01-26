@@ -13,3 +13,8 @@ export function setClick(e, t) {
   }),
     qs(e).addEventListener("click", t);
 }
+export function getParams(param) {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const product = urlParams.get('product')
+}
