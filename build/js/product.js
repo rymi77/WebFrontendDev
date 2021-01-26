@@ -1,3 +1,4 @@
+
 import ProductData from './productData.js';
 import {getParams} from "./utils.js";
 import ProductDetails from './productDetails.js';
