@@ -18,4 +18,3 @@ class ProductData{
     }
 }
 export default ProductData;
-
