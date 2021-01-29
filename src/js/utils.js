@@ -1,20 +1,26 @@
-export function qs(e) {
-  return document.querySelector(e);
+export function qs(selector) {
+  return document.querySelector(selector);
 }
-export function getLocalStorage(e) {
-  return JSON.parse(localStorage.getItem(e));
+
+// retrieve data from localstorage
+export function getLocalStorage(key) {
+  return JSON.parse(localStorage.getItem(key));
 }
-export function setLocalStorage(e, t) {
-  localStorage.setItem(e, JSON.stringify(t));
+// save data to local storage
+export function setLocalStorage(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
 }
-export function setClick(e, t) {
-  qs(e).addEventListener("touchend", (n) => {
-    n.preventDefault(), t();
-  }),
-    qs(e).addEventListener("click", t);
+// set a listener for both touchend and click
+export function setClick(selector, callback) {
+  qs(selector).addEventListener('touchend', (event) => {
+    event.preventDefault();
+    callback();
+  });
+  qs(selector).addEventListener('click', callback);
 }
+
 export function getParams(param) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  const product = urlParams.get('product')
+  return urlParams.get(param);
 }
