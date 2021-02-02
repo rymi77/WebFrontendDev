@@ -44,7 +44,7 @@ export function renderListWithTemplate(template, parent, list, callback) {
 export function renderWithTemplate(template, parent, data, callback) {
   let clone = template.content.cloneNode(true);
   if(callback){
-    const clone = callback(clone, data);
+    clone = callback(clone, data);
   }
   parent.appendChild(clone);
 }
