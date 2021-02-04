@@ -1,11 +1,3 @@
-function convertToText(res) {
-  if (res.ok) {
-    return res.text();
-  } else {
-    throw new Error('Bad Response');
-  }
-}
-
 export function qs(selector) {
   return document.querySelector(selector);
 }
@@ -50,7 +42,7 @@ export function renderWithTemplate(template, parent, data, callback) {
 }
 
 export async function loadTemplate(path){
-  const data = await fetch(path).then(convertToText);
+  const data = await fetch(path).then(response => response.text());
   const template = document.createElement("template")
   template.innerHTML = data;
   return template;
