@@ -6,11 +6,11 @@ function getLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
 
-function getCartContents() {
+async function getCartContents() {
   let markup = '';
   const cartItems = getLocalStorage('so-cart');
   if (cartItems != null){
-    const htmlItems = cartItems.map((item) => renderCartItem(item));
+    const htmlItems = [cartItems].map((item) => renderCartItem(item));
     document.querySelector('.product-list').innerHTML = htmlItems.join('');
   }
 

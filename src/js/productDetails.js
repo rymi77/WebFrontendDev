@@ -7,6 +7,7 @@ export default class ProductDetails {
     this.dataSource = dataSource;
     
   }
+  
   async init() {
     this.product = await this.dataSource.findProductById(this.productId);
     document.querySelector('main').innerHTML = this.renderProductDetails();
@@ -14,10 +15,11 @@ export default class ProductDetails {
     document.getElementById('addToCart')
             .addEventListener('click', this.addToCart.bind(this));
   }
+
   addToCart() {
-    
     setLocalStorage('so-cart', this.product);
   }
+
   renderProductDetails() {
     return `<section class="product-detail"> <h3>${this.product.Brand.Name}</h3>
     <h2 class="divider">${this.product.NameWithoutBrand}</h2>
