@@ -219,3 +219,11 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
+
+.grid {
+  display: flex;
+}
+
+.grid div {
+  flex: 25%;
+}
