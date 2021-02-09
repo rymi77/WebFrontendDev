@@ -1,6 +1,9 @@
 function convertToJson(t) {
-    if (t.ok) return t.json();
-    throw new Error("Bad Response");
+    if (t.ok) {
+      return t.json();
+    } else{
+      throw new Error("Bad Response");
+    }
 }
 
 class ProductData{
@@ -10,8 +13,7 @@ class ProductData{
     }
     
     getData() {
-        return fetch(this.path)
-          .then(convertToJson).then((data) => data);
+        return fetch(this.path).then(convertToJson).then((data) => data);
       }
 
     async findProductById(id) {
