@@ -1,7 +1,12 @@
 import { loadHeaderFooter } from './utils.js';
+import CartList from './cartList.js';
 
 loadHeaderFooter();
 
+const cart = new CartList('so-cart', document.querySelector('.product-list'));
+cart.init();
+
+/*
 function getLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
@@ -37,3 +42,4 @@ const newItem = `<li class="cart-card divider">
 }
 
 getCartContents();
+*/

@@ -1,4 +1,4 @@
-import { setLocalStorage } from './utils.js';
+import { setLocalStorage, getLocalStorage } from './utils.js';
 
 export default class ProductDetails {
   constructor(productId, dataSource){
@@ -17,7 +17,13 @@ export default class ProductDetails {
   }
 
   addToCart() {
-    setLocalStorage('so-cart', this.product);
+    let cartContents = getLocalStorage('so-cart');
+    if (!cartContents)
+      cartContents = [];
+    
+    cartContents.push(this.product);
+
+    setLocalStorage('so-cart', cartContents);
   }
 
   renderProductDetails() {
@@ -25,7 +31,7 @@ export default class ProductDetails {
     <h2 class="divider">${this.product.NameWithoutBrand}</h2>
     <img
       class="divider"
-      src="${this.product.Image}"
+      src="${this.product.Images.PrimaryLarge}"
       alt="${this.product.NameWithoutBrand}"
     />
     <p class="product-card__price">$${this.product.FinalPrice}</p>

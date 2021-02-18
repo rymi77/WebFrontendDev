@@ -20,7 +20,7 @@ class ProductData{
     async findProductById(id) {
       
       
-      return fetch(baseURL + `product/${id}}`)
+      return fetch(baseURL + `product/${id}`)
       .then(convertToJson).then((data) => data.Result);
       
     }
