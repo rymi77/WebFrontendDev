@@ -236,3 +236,16 @@ footer {
   color: white;
   text-decoration: none;
 }
+.checkout-form input{
+  width: 100%;
+}
+.checkout-form{
+  display: flex;
+  flex-direction: column;
+  padding: 1vw;
+}
+
+.checkout-summary ul{
+  list-style-type: none;
+  padding: 0%;
+}
