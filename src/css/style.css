@@ -231,3 +231,8 @@ footer {
 .removeFromCart{
   font-size: 75%;
 }
+
+.checkoutButton{
+  color: white;
+  text-decoration: none;
+}
