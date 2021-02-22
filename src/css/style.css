@@ -227,3 +227,7 @@ footer {
 .grid div {
   flex: 25%;
 }
+
+.removeFromCart{
+  font-size: 75%;
+}
