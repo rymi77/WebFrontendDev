@@ -1,4 +1,4 @@
-import { getLocalStorage } from './utils.js';
+import { getLocalStorage, clearLocalStorage } from './utils.js';
 import ExternalServices from './externalServices.js';
 
 const services = new ExternalServices();
@@ -15,7 +15,6 @@ function formDataToJSON(formElement) {
 
 function packageItems(items) {
   const simplifiedItems = items.map((item) => {
-    console.log(item);
     return {
       id: item.Id,
       price: item.FinalPrice,
@@ -90,6 +89,8 @@ export default class CheckoutProcess {
     try {
       const res = await services.checkout(json);
       console.log(res);
+      clearLocalStorage('so-cart');
+      window.location.href = "./checkedout.html";
     } catch (err) {
       console.log(err);
     }

@@ -35,11 +35,11 @@
           <fieldset>
             <legend>Payment</legend>
             <label for="cardNumber">Card number</label>
-            <input name="cardNumber" required />
+            <input name="cardNumber" required maxlength="16"/>
             <label for="expiration">Expiration</label>
-            <input name="expiration" required />
+            <input name="expiration" required pattern="\d{2}\/\d{4}"/>
             <label for="code">Security Code</label>
-            <input name="code" required />
+            <input name="code" required maxlength="3"/>
           </fieldset>
           <fieldset class="checkout-summary">
             <legend>Order Summary</legend>
